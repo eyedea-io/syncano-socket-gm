@@ -3,7 +3,7 @@ set -e
 
 SCRIPT_PATH="$( cd "$(dirname "$0")" ; pwd -P )"
 BUILD_PATH="${SCRIPT_PATH}/../.tmp-build"
-DIST_PATH="${SCRIPT_PATH}/../dist"
+DIST_PATH="${SCRIPT_PATH}/../bin"
 
 mkdir -p ${DIST_PATH}
 mkdir -p ${BUILD_PATH}
@@ -19,7 +19,7 @@ then
   ./configure --enable-shared=no --enable-static=yes --with-webp=no --prefix=${BUILD_PATH}/gm
   make install
 
-  cp ${BUILD_PATH}/gm/bin/gm ${SCRIPT_PATH}/../dist/
+  cp ${BUILD_PATH}/gm/bin/gm ${DIST_PATH}
 else
   echo "No need to build graphicsmagick"
 fi
@@ -36,7 +36,7 @@ then
   ./configure --enable-shared=no --enable-static=yes --with-webp=no --prefix=${BUILD_PATH}/im
   make install
 
-  cp ${BUILD_PATH}/im/bin/magick ${SCRIPT_PATH}/../dist/
+  cp ${BUILD_PATH}/im/bin/magick ${DIST_PATH}
 else
   echo "No need to build imagemagic"
 fi
