@@ -15,9 +15,18 @@ jobs:
           keys:
           - v6-dependencies-{{ checksum "package.json" }}
 
+      - restore_cache:
+          keys:
+          - v6-dependencies-{{ checksum "bin/build_magic" }}
+
       - run: npm install
       - run: npm install @syncano/cli@canary --no-save
       - run: sh ./bin/build_magic
+
+      - save_cache:
+          paths:
+            - dist
+          key: v6-dependencies-{{ checksum "bin/build_magic" }}
 
       - save_cache:
           paths:
