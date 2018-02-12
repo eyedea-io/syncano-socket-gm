@@ -29,7 +29,7 @@ wget https://www.imagemagick.org/download/ImageMagick-7.0.7-22.tar.gz
 tar -zxvf ImageMagick-7.0.7-22.tar.gz
 cd ImageMagick-7.0.7-22
 
-./configure --enable-shared=no --enable-static=yes --with-webp=no --prefix=/tmp/gm
+./configure --enable-shared=no --enable-static=yes --with-webp=no --prefix=/tmp/im
 make
 make install
 
