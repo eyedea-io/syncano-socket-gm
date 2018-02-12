@@ -4,5 +4,5 @@ mkdir -p .dist
 cp package.json .dist
 cd .dist
 npm install --production
-cp gm node_modules/.bin/
-cp magick node_modules/.bin/
+cp ../bin/gm node_modules/.bin/
+cp ../bin/magick node_modules/.bin/
