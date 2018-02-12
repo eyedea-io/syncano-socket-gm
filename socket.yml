@@ -1,6 +1,11 @@
-name: syncano-socket-gm
-description: HTML to PDF generator
+name: GraphicsMagick
+description: Processing Images
 version: 0.0.8
+keyword:
+  - graphicsmagick
+  - graphics
+  - image
+  - ImageMagick
 endpoints:
   resize:
     description: Generate PDF from HTML
