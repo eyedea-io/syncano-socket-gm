@@ -1,4 +1,4 @@
-name: pdf
+name: syncano-socket-gm
 description: HTML to PDF generator
 version: 0.0.7
 endpoints:
