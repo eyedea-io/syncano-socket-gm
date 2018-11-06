@@ -7,7 +7,6 @@ keyword:
   - image
   - ImageMagick
 endpoints:
-
   resize:
     description: Resize an image
     parameters:

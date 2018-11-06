@@ -20,7 +20,7 @@ Install package in your project:
 ```sh
 cd my_project
 npm install @syncano/cli --save-dev
-npm install @eyedea-sockets/graphics-magic--save
+npm install @eyedea-sockets/graphics-magic --save
 npx s deploy
 ```
 
