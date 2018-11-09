@@ -1,31 +1,29 @@
 name: graphics-magick
 description: Processing Images
 version: 0.0.8
-keyword:
-  - graphicsmagick
-  - graphics
-  - image
-  - ImageMagick
+
 endpoints:
   resize:
     description: Resize an image
-    parameters:
-      file:
-        type: file
-        description: Image file to resize
-        example: test.png
-      width:
-        type: number
-        description: Width which to resize an image
-        exaple: 50
-      height:
-        type: number
-        description: Height which to resize an image
-        example: 20
-    response:
+    inputs:
+      properties:
+        file:
+          type: file
+          description: Image file to resize
+          example: test.png
+        width:
+          type: number
+          description: Width which to resize an image
+          exaple: 50
+        height:
+          type: number
+          description: Height which to resize an image
+          example: 20
+    outputs:
       success:
-        mimetype: file
+        mimetype: image/png
         description: Img successfuly resized
+        example: resize.png
       fail:
         mimetype: json
         description: Image generation failed
@@ -33,17 +31,19 @@ endpoints:
         parameters:
           message:
             type: string
-
   monochrome:
     description: Make an image black and white
-    parameters:
-      file:
-        type: file
-        description: Image file to applay filter
-        example: test.png
+    inputs:
+      properties:
+        file:
+          type: file
+          description: Image file to applay filter
+          example: test.png
+    outputs:
       success:
-        mimetype: file
+        mimetype: image/png
         description: Img filter successfuly applied
+        example: monochrome.png
       fail:
         mimetype: json
         description: Image generation failed
@@ -51,17 +51,19 @@ endpoints:
         parameters:
           message:
             type: string
-
   sepia:
     description: Applay sepia filter to an image
-    parameters:
-      file:
-        type: file
-        description: Image file to applay filter
-        example: test.png
+    inputs:
+      properties:
+        file:
+          type: file
+          description: Image file to applay filter
+          example: test.png
+    outputs:
       success:
-        mimetype: file
+        mimetype: image/png
         description: Image filter successfuly applied
+        example: sepia.png
       fail:
         mimetype: json
         description: Image generation failed
