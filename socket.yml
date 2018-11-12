@@ -1,6 +1,4 @@
 name: graphics-magick
-description: Processing Images
-version: 0.0.8
 
 endpoints:
   resize:
