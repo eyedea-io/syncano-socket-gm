@@ -1,5 +1,6 @@
 node_modules
 **/scripts/.bundles
+
 .dist
-storage
-.results
+coverage
+.DS_Store

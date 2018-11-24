@@ -1,34 +1,70 @@
 name: graphics-magick
-description: Processing Images
-version: 0.0.8
-keyword:
-  - graphicsmagick
-  - graphics
-  - image
-  - ImageMagick
+
 endpoints:
   resize:
-    description: Generate PDF from HTML
-    parameters:
-      filename:
-        type: string
-        description: Name of the output file
-        example: output.pdf
-      html:
-        type: string
-        descritption: HTML to convert into PDF
-        example: <h1>Title!<h1><p>Paragraph!</p>
-      css:
-        type: string
-        descritption: CSS used to convert into PDF
-        example: 'h1 {font-size: 60px}'
-    response:
+    description: Resize an image
+    inputs:
+      properties:
+        file:
+          type: file
+          description: Image file to resize
+          example: test.png
+        width:
+          type: number
+          description: Width which to resize an image
+          exaple: 50
+        height:
+          type: number
+          description: Height which to resize an image
+          example: 20
+    outputs:
       success:
-        mimetype: application/pdf
-        description: PDF successfuly generated
+        mimetype: image/png
+        description: Img successfuly resized
+        example: resize.png
       fail:
-        mimetype: application/json
-        description: Zip generation failed
+        mimetype: json
+        description: Image generation failed
+        exit_code: 400
+        parameters:
+          message:
+            type: string
+  monochrome:
+    description: Make an image black and white
+    inputs:
+      properties:
+        file:
+          type: file
+          description: Image file to applay filter
+          example: test.png
+    outputs:
+      success:
+        mimetype: image/png
+        description: Img filter successfuly applied
+        example: monochrome.png
+      fail:
+        mimetype: json
+        description: Image generation failed
+        exit_code: 400
+        parameters:
+          message:
+            type: string
+  sepia:
+    description: Applay sepia filter to an image
+    inputs:
+      properties:
+        file:
+          type: file
+          description: Image file to applay filter
+          example: test.png
+    outputs:
+      success:
+        mimetype: image/png
+        description: Image filter successfuly applied
+        example: sepia.png
+      fail:
+        mimetype: json
+        description: Image generation failed
         exit_code: 400
         parameters:
           message:
