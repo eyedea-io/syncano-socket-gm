@@ -19,7 +19,7 @@
     "@babel/preset-env": "^7.0.0-beta.55",
     "@babel/preset-typescript": "^7.0.0-beta.55",
     "@eyedea/syncano": "^0.2.0",
-    "@syncano/test": "0.13.0-alpha.4d352111",
+    "@syncano/test": "0.9.3",
     "@types/node": "^10.5.6",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.0.1",
