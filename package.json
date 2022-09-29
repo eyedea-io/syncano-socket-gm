@@ -11,7 +11,9 @@
     "test:e2e-single:coverage": "nyc --produce-source-map=true NODE_ENV=test mocha -s 1800 --reporter spec --require babel-register --timeout 4000",
     "test:e2e": "npm run test:e2e-single -- 'test/*.test.js'",
     "test:e2e:coverage": "nyc --produce-source-map=true npm run test:e2e",
-    "test:lint": "standard --fix"
+    "test:lint": "standard --fix",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "dependencies": {
     "@babel/cli": "^7.0.0-beta.55",
@@ -19,7 +21,7 @@
     "@babel/preset-env": "^7.0.0-beta.55",
     "@babel/preset-typescript": "^7.0.0-beta.55",
     "@eyedea/syncano": "^0.2.0",
-    "@syncano/test": "0.13.0-alpha.4d352111",
+    "@syncano/test": "0.10.0",
     "@types/node": "^10.5.6",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.0.1",
@@ -35,7 +37,8 @@
     "tslint": "5.11.0",
     "tslint-eslint-rules": "5.3.1",
     "tslint-react": "3.6.0",
-    "typescript": "^2.7.2"
+    "typescript": "^2.7.2",
+    "@snyk/protect": "latest"
   },
   "jest": {
     "testEnvironment": "node",
@@ -73,5 +76,6 @@
         }
       ]
     ]
-  }
+  },
+  "snyk": true
 }
